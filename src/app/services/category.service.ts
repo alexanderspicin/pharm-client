@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
-const CATEGORY_API = 'http://localhost:8080/category/'
+const CATEGORY_API = 'https://spicin-pharmacy.herokuapp.com/category/'
 @Injectable({
   providedIn: 'root'
 })
