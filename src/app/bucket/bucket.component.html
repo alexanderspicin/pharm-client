@@ -33,7 +33,7 @@
                             </thead>
                             <tbody >
                                 <tr *ngFor="let product of bucket.bucketDetails">
-                                    <td><img [src]='"https://spicin-pharmacy.herokuapp.com/" + product.productId +"/image/download"' class="img-cart"></td>
+                                    <td><img [src]='"https://spicin-pharmacy.herokuapp.com/products/" + product.productId +"/image/download"' class="img-cart"></td>
                                     <td ><strong><a href="/product-details/{{product.productId}}">{{product.productName}}</a></strong></td>
                                     <td>
                                     <form class="form-inline">
