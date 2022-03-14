@@ -18,7 +18,7 @@
             <div class="card-body">
               <div class="mb-3 d-flex justify-content-between">
                 <div>
-                  <span class="me-3">22-11-2021</span>
+                  <span class="me-3">{{order.createTime | date:'yyyy-MM-dd'}}</span>
                   <span class="me-3">#{{order.id}}</span>
                   <span class="badge rounded-pill bg-info">{{order.status}}</span>
                 </div>
