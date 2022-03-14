@@ -1,0 +1,37 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container bootdey">
+    <div class="col-md-12">
+    <section class="panel">
+          <div class="panel-body">
+              <div class="col-md-6">
+                  <div class="pro-img-details">
+                      <img [src]='"http://localhost:8080/products/" + this.id +"/image/download"' alt="">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <h4 class="pro-d-title">
+                      <a href="/product-details/{{product.id}}" class="">
+                          {{product.productName}}
+                      </a>
+                  </h4>
+                  <p>
+                      {{product.productDescription}}
+                  </p>
+                  <div class="product_meta">
+                      <span class="posted_in" > <strong>Categories:</strong> <a *ngFor="let category of product.categories" rel="tag" href="/home/{{category['title']}}">{{category["title"]}} </a>.</span>
+                      <span class="posted_in"> <strong>Composition:</strong> <div>{{product.composition}}</div></span>
+                      <span class="posted_in"> <strong>Indications:</strong> <div>{{product.indications}}</div></span>
+                      <span class="posted_in"> <strong>Manifacturer:</strong> <div>{{product.manifacturer}}</div></span>
+                  </div>
+                  <div class="m-bot15"> <strong>Price : </strong><span class="pro-price"> {{product.price}}р</span></div>
+
+                  <p>
+                      <button class="btn btn-round btn-danger" (click)="addToBucket(product.id)" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                  </p>
+              </div>
+          </div>
+      </section>
+      </div>
+      </div>

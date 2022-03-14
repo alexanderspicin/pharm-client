@@ -1,0 +1,65 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<div class="container bootstrap snippets bootdey">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info panel-shadow">
+                    <div class="panel-heading">
+                        <h3>
+                            <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
+                            {{user.username}}
+                        </h3>
+                    </div>
+                    <div class="panel-body"> 
+                        <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Product Name</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody >
+                                <tr *ngFor="let product of bucket.bucketDetails">
+                                    <td><img [src]='"http://localhost:8080/products/" + product.productId +"/image/download"' class="img-cart"></td>
+                                    <td ><strong><a href="/product-details/{{product.productId}}">{{product.productName}}</a></strong></td>
+                                    <td>
+                                    <form class="form-inline">
+                                        <div class="form-control" type="text">{{product.amount}}</div>
+                                        <button rel="tooltip" class="btn btn-default" (click)="addToBucket(product.productId)"><i class="fa fa-plus"></i></button>
+                                        <button rel="tooltip" class="btn btn-default"(click)="deleteOneFromBucket(product.productId)"><i class="fa fa-minus"></i></button>
+                                        <a (click)="deleteAllFromBucket(product.productId)" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                                    </form>
+                                    </td>
+                                    <td>{{product.price.toFixed(2)}} р</td>
+                                    <td>{{product.sum.toFixed(2)}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-right"><strong>Total</strong></td>
+                                    <td>{{bucket.sum.toFixed(2)}} р</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+                <a href="/home" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
+                <a (click)="create_order()" class="btn btn-primary pull-right">Create order<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+    </div>

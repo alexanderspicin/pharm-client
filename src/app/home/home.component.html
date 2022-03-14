@@ -1,0 +1,83 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<div class="container bootdey">
+    <div class="col-md-3">
+        <section class="panel">
+            <div class="panel-body">
+                <input type="text" placeholder="Keyword Search" class="form-control" [(ngModel)] = "searchString"/>
+            </div>
+        </section>
+        <section class="panel">
+            <div class="panel-body">
+
+                <ul class="nav prod-cat">
+                    <li>
+                        <a ><i class="fa fa-angle-down"></i>Category</a>
+                        <ul class="nav"  *ngFor="let category of categories">
+                            <li><a class="category-title" (click)="getAllProductByCategory(category.title)" [class.active]="category.title == activeCategory">{{category.title}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="panel">
+            <div class="panel-body sliders">
+                <div id="slider-range" class="slider"></div>
+                <div class="slider-info">
+                    <span id="slider-range-amount"></span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-9">
+        <section class="panel">
+            <div class="panel-body">
+                <div class="pull-right">
+                    <ul class="pagination pagination-sm pro-page-list">
+                        <pagination-controls
+                        previousLabel="Prev"
+                        nextLabel="Next"
+                        (pageChange)="onTableDataChange($event)"
+                        >
+                        </pagination-controls>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="row product-list">
+            <div class="col-md-4" *ngFor="let product of products | filterAll: searchString | paginate: {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };
+                let i = index ">
+                <section class="panel">
+                    <div class="pro-img-box" >
+                        <img [src]='"http://localhost:8080/products/" + product.id +"/image/download"' f alt="" />
+                        <a (click)="addToBucket(product.id)" class="adtocart">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                    <div class="panel-body text-center">
+                        <h4>
+                            <a href="/product-details/{{product.id}}" class="pro-title">
+                                {{product.productName}}
+                            </a>
+                        </h4>
+                        <p class="price">{{product.price}}р</p>
+                    </div>
+                </section>
+              </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container bootdey">
+    <div class="panel panel-default panel-order">
+        <div class="panel-heading">
+            <strong>Order history</strong>
+            <div class="btn-group pull-right">
+                <div class="btn-group">
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-11" *ngFor="let order of userOrders">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-right"><label class="label label-danger">{{order.status}}</label></div>
+                            <span ><strong >Order id: {{order.id}}</strong></span><br />
+                            Quantity : {{order.amountProducts}}, cost: {{order.sum}} р <br />
+                            <a data-placement="top" class="btn btn-success btn-xs fa fa-bars" href="/order-details/{{order.id}}" title="View"></a>
+                        </div>
+                        <div class="col-md-12">order made on: {{order.createTime | date:'yyyy-MM-dd'}}<a href="#"></a></div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>

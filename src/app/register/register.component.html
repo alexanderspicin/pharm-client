@@ -1,0 +1,60 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<div class="text-center" style="padding:50px 0">
+	<div class="logo">register</div>
+	<!-- Main Form -->
+	<div class="login-form-1">
+		<form id="register-form" class="text-left">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<label for="reg_username" class="sr-only">Username</label>
+						<input type="text" class="form-control"data-toggle="tooltip" data-placement="top" title="Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
+Username allowed of the dot (.), underscore (_), and hyphen (-).
+The dot (.), underscore (_), or hyphen (-) must not be the first or last character.
+The dot (.), underscore (_), or hyphen (-) does not appear consecutively, e.g.,
+The number of characters must be between 5 to 20." [(ngModel)]="username" id="reg_username" name="reg_username" placeholder="username">
+					</div>
+					<div class="form-group">
+						<label for="reg_password" class="sr-only" >Password</label>
+						<input type="password" class="form-control" data-toggle="tooltip" data-placement="top" title="At least one upper case English letter 
+At least one lower case English letter
+At least one digit
+At least one special character
+Minimum eight in length" [(ngModel)]="password "id="reg_password" name="reg_password" placeholder="password">
+					</div>
+					<div class="form-group">
+						<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+						<input type="password" class="form-control" [(ngModel)]="matchingPassword "id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+					</div>
+					
+					<div class="form-group">
+						<label for="reg_email" class="sr-only">Email</label>
+						<input type="text" class="form-control" [(ngModel)]="email" id="reg_email" name="reg_email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<label for="reg_fullname" class="sr-only">First Name</label>
+						<input type="text" class="form-control" [(ngModel)]="firstname" id="reg_firstname" name="reg_firstname" placeholder="first name">
+					</div>
+					<div class="form-group">
+						<label for="reg_fullname" class="sr-only">Last Name</label>
+						<input type="text" class="form-control" [(ngModel)]="lastname" id="reg_lastname" name="reg_lastname" placeholder="last name">
+					</div>
+				</div>
+				<button type="submit" class="login-button"  (click)="register()"><i class="fa fa-chevron-right"></i></button>
+			</div>
+			<div class="etc-login-form">
+				<p>already have an account? <a href="/login">login here</a></p>
+			</div>
+		</form>
+	</div>
