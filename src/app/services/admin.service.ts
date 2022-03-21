@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { productCreateForm } from '../models/productCreateFrom';
-const ADMIN_API = 'http://localhost:8080/admin/'
+const ADMIN_API = 'https://spicin-pharmacy.herokuapp.com/admin/'
 @Injectable({
     providedIn: 'root'
   })
