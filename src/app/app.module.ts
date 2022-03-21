@@ -58,7 +58,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [AuthService,UserService, NotificationService, ProductService, PagerService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [AuthService,UserService, NotificationService, ProductService, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
