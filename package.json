@@ -5,9 +5,9 @@
     "ng": "ng",
     "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "build": "ng build",
-    "start": "http-server-spa dist/angular-reddit-clone index.html $PORT",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "http-server-spa dist/client index.html $PORT",
+    "test": "ng test",
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "16.x"
