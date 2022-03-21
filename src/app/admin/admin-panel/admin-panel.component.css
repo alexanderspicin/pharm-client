@@ -1,0 +1,38 @@
+
+				                
+body{margin-top:20px;}		
+
+.sidebar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+
+  .panel {
+    display: inline;
+    border: none;
+    box-shadow: none;
+}
+
+.panel-heading {
+    border-color:#eff2f7 ;
+    font-size: 16px;
+    font-weight: 300;
+}
+.pro-page-list {
+  margin: 5px 0 0 0;
+}
+
+.panel-title {
+    color: #2A3542;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.li-class{
+  cursor: pointer
+}

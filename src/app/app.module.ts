@@ -22,6 +22,11 @@ import { BucketComponent } from './bucket/bucket.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { AdminPanelComponent } from 'src/app/admin/admin-panel/admin-panel.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
+import { CategoryListComponent } from './admin/category-list/category-list.component';
+import { ProductCreatingComponent } from './admin/product-creating/product-creating.component';
+import { ChatBotComponent } from './layout/chat-bot/chat-bot.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     BucketComponent,
     ProfileComponent,
     OrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AdminPanelComponent,
+    UserListComponent,
+    CategoryListComponent,
+    ProductCreatingComponent,
+    ChatBotComponent
     
   ],
   imports: [

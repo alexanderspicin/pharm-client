@@ -16,7 +16,7 @@
                     <div class="panel-heading">
                         <h3>
                             <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
-                            {{user.username}}
+                            {{user?.username}}
                         </h3>
                     </div>
                     <div class="panel-body"> 
@@ -31,27 +31,27 @@
                                 <th>Total</th>
                             </tr>
                             </thead>
-                            <tbody >
-                                <tr *ngFor="let product of bucket.bucketDetails">
-                                    <td><img [src]='"http://localhost:8080/products/" + product.productId +"/image/download"' class="img-cart"></td>
-                                    <td ><strong><a href="/product-details/{{product.productId}}">{{product.productName}}</a></strong></td>
+                            <tbody>
+                                <tr *ngFor="let product of bucket?.bucketDetails">
+                                    <td><img [src]='"http://localhost:8080/products/" + product?.productId +"/image/download"' class="img-cart"></td>
+                                    <td ><strong><a href="/product-details/{{product?.productId}}">{{product?.productName}}</a></strong></td>
                                     <td>
                                     <form class="form-inline">
-                                        <div class="form-control" type="text">{{product.amount}}</div>
+                                        <div class="form-control" type="text">{{product?.amount}}</div>
                                         <button rel="tooltip" class="btn btn-default" (click)="addToBucket(product.productId)"><i class="fa fa-plus"></i></button>
                                         <button rel="tooltip" class="btn btn-default"(click)="deleteOneFromBucket(product.productId)"><i class="fa fa-minus"></i></button>
                                         <a (click)="deleteAllFromBucket(product.productId)" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
                                     </form>
                                     </td>
-                                    <td>{{product.price.toFixed(2)}} р</td>
-                                    <td>{{product.sum.toFixed(2)}}</td>
+                                    <td>{{product?.price?.toFixed(2)}} р</td>
+                                    <td>{{product?.sum?.toFixed(2)}}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="6">&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                    <td>{{bucket.sum.toFixed(2)}} р</td>
+                                    <td>{{bucket?.sum?.toFixed(2)}} р</td>
                                 </tr>
                             </tbody>
                         </table>

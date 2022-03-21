@@ -28,6 +28,11 @@ export class ProductService {
     return this.httpclient.get(PRODUCT_API + id, {headers, responseType: 'json'})
   }
 
+  getProductByName(name:string): Observable<any> {
+    const headers=new HttpHeaders()
+    return this.httpclient.get(PRODUCT_API + 'get/' + name, {headers, responseType: 'json'})
+  }
+
   getAllProductsByCategory(title:string): Observable<any> {
     const headers=new HttpHeaders()
     return this.httpclient.post(PRODUCT_API + "getProductByCategory",{'title':title}, {headers, responseType: 'json'})

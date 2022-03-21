@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   searchString: string;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 1;
+  tableSize: number = 9;
   tableSizes: any = [3, 6, 9, 12];
   activeCategory: string;
   showCategory: boolean;

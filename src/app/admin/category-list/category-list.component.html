@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">   
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <thead>
+                            <tr>
+                                <th><span>Id</span></th>
+                                <th><span>Role</span></th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let category of categories | paginate: {
+                                itemsPerPage: tableSize,
+                                currentPage: page,
+                                totalItems: count
+                            };
+                                let i = index ">
+                                <td >
+                                    <a class="user-link">{{category.id}}</a>
+                                </td>
+                                <td>
+                                    <span class="user-subhead">{{category.title}}</span>
+                                </td>
+                            </tr>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <ul class="pagination pagination-sm pro-page-list">
+                                <pagination-controls
+                                previousLabel="Prev"
+                                nextLabel="Next"
+                                (pageChange)="onTableDataChange($event)"
+                                >
+                                </pagination-controls>
+                            </ul>
+                        </div>
+                    </div>
+                </section>

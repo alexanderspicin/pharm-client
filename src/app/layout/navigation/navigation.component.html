@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="navigation.component.css" rel="stylesheet" />
+    
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
@@ -27,6 +28,9 @@
                   <p *ngIf="authChecker()">
                     <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                   </p>
+                  <p *ngIf="checkRole()">
+                    <li class="nav-item"><a class="nav-link" href="/admin">Admin panel</a></li>
+                  </p>
                   <p *ngIf="authChecker()">
                     <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
                   </p>
@@ -38,7 +42,7 @@
                 <button class="btn btn-outline-dark" (click)="toPage('bucket')" *ngIf="authChecker()">
                     <i class="bi-cart-fill me-1"></i>
                     Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill" >{{bucket.amountProducts}}</span>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill" >{{bucket?.amountProducts}}</span>
                 </button>
                 <button class="btn btn-outline-dark"  (click)="toPage('login')" *ngIf="!authChecker()">
                     <i class="bi-cart-fill me-1" ></i>
