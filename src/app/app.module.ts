@@ -27,6 +27,7 @@ import { UserListComponent } from './admin/user-list/user-list.component';
 import { CategoryListComponent } from './admin/category-list/category-list.component';
 import { ProductCreatingComponent } from './admin/product-creating/product-creating.component';
 import { ChatBotComponent } from './layout/chat-bot/chat-bot.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { ChatBotComponent } from './layout/chat-bot/chat-bot.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [AuthService,UserService, NotificationService, ProductService, PagerService],
+  providers: [AuthService,UserService, NotificationService, ProductService, PagerService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
