@@ -10,7 +10,7 @@
           <div class="panel-body">
               <div class="col-md-6">
                   <div class="pro-img-details">
-                      <img [src]='previewImageUrl || "http://localhost:8080/products/5/image/download"' alt="">
+                      <img [src]='previewImageUrl || "https://spicin-pharmacy.herokuapp.com/products/5/image/download"' alt="">
                   </div>
                   <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" accept="image/*" (change)="onFileSelected($event)"> <button [disabled]=" !(imageUpload && productCreated)" (click)="uploadImage()">Upload</button>
