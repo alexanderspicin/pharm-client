@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-const AUTH_API= 'http://localhost:8080/';
+const AUTH_API= 'https://spicin-pharmacy.herokuapp.com/';
 
-const REGISTER_API= 'http://localhost:8080/users/';
+const REGISTER_API= 'https://spicin-pharmacy.herokuapp.com/users/';
 
 @Injectable({
   providedIn: 'root'

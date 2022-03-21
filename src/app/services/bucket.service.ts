@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-const BUCKET_API = 'http://localhost:8080/buckets/'
+const BUCKET_API = 'https://spicin-pharmacy.herokuapp.com/buckets/'
 @Injectable({
   providedIn: 'root'
 })

@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "build": "ng build",
+    "start": "http-server-spa dist/client index.html $PORT",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "private": true,
   "dependencies": {
